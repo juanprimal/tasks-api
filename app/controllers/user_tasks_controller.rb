@@ -4,21 +4,19 @@ class UserTasksController < ApplicationController
 
   # GET /users/:user_id/user_tasks
   def index
-    # json_response(@user.user_tasks)
     render json: @user.user_tasks, status: :ok
   end
 
   # GET /users/:user_id/user_tasks/:id
   def show
-    # json_response(@user_task)
     render json: @user_task, status: :ok
   end
 
   # POST /users/:user_id/user_tasks
   def create
     @user.user_tasks.create!(user_task_params)
-    # json_response(@user, :created)
-    render json: @user, status: :created
+    @user.reload
+    render json: @user.user_tasks.last, status: :created
   end
 
   # PUT /users/:user_id/user_tasks/:id

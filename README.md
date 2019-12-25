@@ -28,13 +28,13 @@ bundle install
 Once finished the installation process, run the server
 
 ```bash
-rails s
+rails s -p 3001
 ```
 
-Now the server should be running and listening in the port 3000
+Now the server should be running and listening in the port 3001
 
 ```bash
-http://localhost:3000
+http://localhost:3001
 ```
 
 
